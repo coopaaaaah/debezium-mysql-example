@@ -11,3 +11,5 @@ https://debezium.io/documentation/reference/stable/tutorial.html
 2. (inside connect container) curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ --data-binary "@connector-config.json"
 3. docker compose up -d watcher
 
+Following these steps, you should see the first 4 events loaded representing the 4 rows in the customers table.
+Make table changes in the mysql_source container to see them reflected in the watcher.
