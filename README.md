@@ -7,10 +7,7 @@ https://debezium.io/documentation/reference/stable/tutorial.html
 2. Have a halfway decent machine (4GB of RAM, 20GB of storage available)
 
 ### Startup Steps
-1. docker compose up -d
+1. docker compose up -d zookeeper kafka mysql_source connector
 2. (inside connect container) curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ --data-binary "@connector-config.json"
-3. Monitor a table changes via kafka topic ... tbd
+3. docker compose up -d watcher
 
-```
-bin/kafka-topics.sh --describe --bootstrap-server=kafka:9092
-```
